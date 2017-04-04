@@ -16,12 +16,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cesards.cropimageview.CropImageView;
+import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.davemorrissey.labs.subscaleview.ImageViewState;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.ninghoo.beta.myapplication.R;
+import com.ninghoo.beta.myapplication.WeiboAdapter.ImageAdapter;
 import com.ninghoo.beta.myapplication.WeiboUtils.DateUtils;
 import com.ninghoo.beta.myapplication.WeiboUtils.NetUtil;
 import com.ninghoo.beta.myapplication.WeiboUtils.SharedPreferencesUtil;
 import com.ninghoo.beta.myapplication.WeiboUtils.TimeUtils;
+import com.ninghoo.beta.myapplication.WeiboUtils.WeiBoContentTextUtil;
 import com.ninghoo.beta.myapplication.WeiboView.EmojiTextView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -188,15 +193,15 @@ public class FillContent {
             if (user.follow_me && user.following) {
                 icon.setImageResource(R.drawable.card_icon_arrow);
                 text.setText("互相关注");
-                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_each_other));
+//                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_each_other));
             } else if (user.following) {
                 icon.setImageResource(R.drawable.card_icon_attention);
                 text.setText("已关注");
-                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_alreay));
+//                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_alreay));
             } else {
                 icon.setImageResource(R.drawable.card_icon_addattention);
                 text.setText("加关注");
-                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_none));
+//                text.setTextColor(context.getResources().getColor(R.color.night_friend_item_button_follow_none));
             }
         }
 
@@ -275,10 +280,10 @@ public class FillContent {
         bottombar_retweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, IdeaActivity.class);
-                intent.putExtra("ideaType", PostService.POST_SERVICE_REPOST_STATUS);
-                intent.putExtra("status", status);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, IdeaActivity.class);
+//                intent.putExtra("ideaType", PostService.POST_SERVICE_REPOST_STATUS);
+//                intent.putExtra("status", status);
+//                context.startActivity(intent);
             }
         });
     }
@@ -294,20 +299,20 @@ public class FillContent {
         bottombar_comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, IdeaActivity.class);
-                intent.putExtra("ideaType", PostService.POST_SERVICE_COMMENT_STATUS);
-                intent.putExtra("status", status);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, IdeaActivity.class);
+//                intent.putExtra("ideaType", PostService.POST_SERVICE_COMMENT_STATUS);
+//                intent.putExtra("status", status);
+//                context.startActivity(intent);
             }
         });
 
         bottombar_retweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, IdeaActivity.class);
-                intent.putExtra("ideaType", PostService.POST_SERVICE_REPOST_STATUS);
-                intent.putExtra("status", status);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, IdeaActivity.class);
+//                intent.putExtra("ideaType", PostService.POST_SERVICE_REPOST_STATUS);
+//                intent.putExtra("status", status);
+//                context.startActivity(intent);
             }
         });
 
@@ -593,29 +598,29 @@ public class FillContent {
         longImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ImageDetailsActivity.class);
-                intent.putExtra("imagelist_url", status.origin_pic_urls);
-                intent.putExtra("image_position", position);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, ImageDetailsActivity.class);
+//                intent.putExtra("imagelist_url", status.origin_pic_urls);
+//                intent.putExtra("image_position", position);
+//                context.startActivity(intent);
             }
         });
         gifImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ImageDetailsActivity.class);
-                intent.putExtra("imagelist_url", status.bmiddle_pic_urls);
-                intent.putExtra("image_position", position);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, ImageDetailsActivity.class);
+//                intent.putExtra("imagelist_url", status.bmiddle_pic_urls);
+//                intent.putExtra("image_position", position);
+//                context.startActivity(intent);
             }
         });
 
         norImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ImageDetailsActivity.class);
-                intent.putExtra("imagelist_url", status.origin_pic_urls);
-                intent.putExtra("image_position", position);
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, ImageDetailsActivity.class);
+//                intent.putExtra("imagelist_url", status.origin_pic_urls);
+//                intent.putExtra("image_position", position);
+//                context.startActivity(intent);
             }
         });
     }
@@ -679,35 +684,35 @@ public class FillContent {
 
     }
 
-    public static void refreshNoneView(Context context, int type, int repostss_count, int comments_count, View noneView) {
-        TextView textView = (TextView) noneView.findViewById(R.id.tv_normal_refresh_footer_status);
-        if (NetUtil.isConnected(context)) {
-            switch (type) {
-                case StatusDetailModelImp.COMMENT_PAGE:
-                    if (comments_count > 0) {
-                        noneView.setVisibility(View.GONE);
-                    } else if (comments_count == 0) {
-                        noneView.setVisibility(View.VISIBLE);
-                        textView.setText("还没有人评论");
-                    }
-                    break;
-
-                case StatusDetailModelImp.REPOST_PAGE:
-                    if (repostss_count > 0) {
-                        noneView.setVisibility(View.GONE);
-                    } else if (repostss_count == 0) {
-                        noneView.setVisibility(View.VISIBLE);
-                        textView.setText("还没有人转发");
-                    }
-                    break;
-            }
-
-        } else {
-            noneView.setVisibility(View.VISIBLE);
-            textView.setText("网络出错啦");
-        }
-
-    }
+//    public static void refreshNoneView(Context context, int type, int repostss_count, int comments_count, View noneView) {
+//        TextView textView = (TextView) noneView.findViewById(R.id.tv_normal_refresh_footer_status);
+//        if (NetUtil.isConnected(context)) {
+//            switch (type) {
+//                case StatusDetailModelImp.COMMENT_PAGE:
+//                    if (comments_count > 0) {
+//                        noneView.setVisibility(View.GONE);
+//                    } else if (comments_count == 0) {
+//                        noneView.setVisibility(View.VISIBLE);
+//                        textView.setText("还没有人评论");
+//                    }
+//                    break;
+//
+//                case StatusDetailModelImp.REPOST_PAGE:
+//                    if (repostss_count > 0) {
+//                        noneView.setVisibility(View.GONE);
+//                    } else if (repostss_count == 0) {
+//                        noneView.setVisibility(View.VISIBLE);
+//                        textView.setText("还没有人转发");
+//                    }
+//                    break;
+//            }
+//
+//        } else {
+//            noneView.setVisibility(View.VISIBLE);
+//            textView.setText("网络出错啦");
+//        }
+//
+//    }
 
 
     /**
@@ -720,12 +725,12 @@ public class FillContent {
      * @param commentView
      */
 
-    public static void fillCommentList(Context context, int commentCount, ArrayList<Comment> commentArrayList, final RecyclerView recyclerView, TextView commentView) {
-        CommentDetailAdapter commentAdapter = new CommentDetailAdapter(context, commentArrayList);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(commentAdapter);
-    }
+//    public static void fillCommentList(Context context, int commentCount, ArrayList<Comment> commentArrayList, final RecyclerView recyclerView, TextView commentView) {
+//        CommentDetailAdapter commentAdapter = new CommentDetailAdapter(context, commentArrayList);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        recyclerView.setAdapter(commentAdapter);
+//    }
 
     /**
      * 填充转发中的内容区域

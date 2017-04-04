@@ -1,11 +1,10 @@
 package com.ninghoo.beta.myapplication.Activity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -15,9 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.ninghoo.beta.myapplication.Fragment.HomeFragment;
+import com.ninghoo.beta.myapplication.WeiboFragment.HomeFragment;
 import com.ninghoo.beta.myapplication.R;
-import com.sina.weibo.sdk.utils.LogUtil;
+import com.ninghoo.beta.myapplication.WeiboModel.BarManager;
+import com.ninghoo.beta.myapplication.WeiboUtils.SharedPreferencesUtil;
+import com.ninghoo.beta.myapplication.WeiboUtils.StatusBarUtils;
 
 import java.lang.reflect.Field;
 
@@ -91,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private FragmentTransaction mTransaction;
 
-//    /**
-//     * 管理顶部与底部的导航栏的显示与隐藏
-//     */
-//    private BarManager mBarManager;
+    /**
+     * 管理顶部与底部的导航栏的显示与隐藏
+     */
+    private BarManager mBarManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,19 +103,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = this;
 
-//        // 底部各个栏目图标。
-//        mHomeTab = (RelativeLayout) findViewById(R.id.tv_home);
-//        mMessageTab = (RelativeLayout) findViewById(R.id.tv_message);
-//        mDiscoeryTab = (RelativeLayout) findViewById(R.id.tv_discovery);
-//        mProfile = (RelativeLayout) findViewById(R.id.tv_profile);
-//        mPostTab = (ImageView) findViewById(R.id.fl_post);
-//        mButtonBar = (LinearLayout) findViewById(R.id.buttonBarId);
-//        //mSnackBarContainer = (CoordinatorLayout) findViewById(R.id.coordinatorLayoutId);
+        // 底部各个栏目图标。
+        mHomeTab = (RelativeLayout) findViewById(R.id.tv_home);
+        mMessageTab = (RelativeLayout) findViewById(R.id.tv_message);
+        mDiscoeryTab = (RelativeLayout) findViewById(R.id.tv_discovery);
+        mProfile = (RelativeLayout) findViewById(R.id.tv_profile);
+        mPostTab = (ImageView) findViewById(R.id.fl_post);
+        mButtonBar = (LinearLayout) findViewById(R.id.buttonBarId);
+        //mSnackBarContainer = (CoordinatorLayout) findViewById(R.id.coordinatorLayoutId);
 
         //LogReport.getInstance().upload(mContext);
-//        mBarManager = new BarManager(mContext);
-//        mFragmentManager = getSupportFragmentManager();
-//        mComeFromAccoutActivity = getIntent().getBooleanExtra("comeFromAccoutActivity", false);
+        mBarManager = new BarManager(mContext);
+        mFragmentManager = getSupportFragmentManager();
+        mComeFromAccoutActivity = getIntent().getBooleanExtra("comeFromAccoutActivity", false);
 //
 //        //如果是从崩溃中恢复，还需要加载之前的缓存
 //        if (savedInstanceState != null) {
@@ -127,20 +128,20 @@ public class MainActivity extends AppCompatActivity {
         setUpListener();
 
 
-//        boolean setNightMode = (boolean) SharedPreferencesUtil.get(this, "setNightMode", false);
-//        //
-//        if (!setNightMode) {
-//            StatusBarUtils.from(this)
-//                    .setTransparentStatusbar(true)
-//                    .setStatusBarColor(Color.parseColor("#FFFFFF"))
-//                    .setLightStatusBar(true)
-//                    .process(this);
-//        }else {
-//            StatusBarUtils.from(this)
-//                    .setTransparentStatusbar(true)
-//                    .setStatusBarColor(Color.parseColor("#262626"))
-//                    .process(this);
-//        }
+        boolean setNightMode = (boolean) SharedPreferencesUtil.get(this, "setNightMode", false);
+        //
+        if (!setNightMode) {
+            StatusBarUtils.from(this)
+                    .setTransparentStatusbar(true)
+                    .setStatusBarColor(Color.parseColor("#FFFFFF"))
+                    .setLightStatusBar(true)
+                    .process(this);
+        }else {
+            StatusBarUtils.from(this)
+                    .setTransparentStatusbar(true)
+                    .setStatusBarColor(Color.parseColor("#262626"))
+                    .process(this);
+        }
     }
 
     @Override
