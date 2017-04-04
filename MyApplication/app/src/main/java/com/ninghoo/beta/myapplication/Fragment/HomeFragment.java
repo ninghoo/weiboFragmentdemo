@@ -17,10 +17,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ninghoo.beta.myapplication.Adapter.WeiboAdapter;
+import com.ninghoo.beta.myapplication.Imp.HomeFragmentPresentImp;
 import com.ninghoo.beta.myapplication.Interface.Constants;
 import com.ninghoo.beta.myapplication.Interface.HomeFragmentPresent;
 import com.ninghoo.beta.myapplication.R;
-import com.ninghoo.beta.myapplication.View.ArrowDialog;
+import com.ninghoo.beta.myapplication.WeiboView.ArrowDialog;
 import com.ninghoo.beta.myapplication.WeiboModel.Status;
 import com.ninghoo.beta.myapplication.WeiboUtils.DensityUtil;
 import com.ninghoo.beta.myapplication.WeiboUtils.ScreenUtil;

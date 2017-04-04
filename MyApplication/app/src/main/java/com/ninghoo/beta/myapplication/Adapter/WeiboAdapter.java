@@ -16,7 +16,8 @@ import android.widget.TextView;
 
 
 import com.ninghoo.beta.myapplication.R;
-import com.ninghoo.beta.myapplication.View.EmojiTextView;
+import com.ninghoo.beta.myapplication.WeiboModel.FillContent;
+import com.ninghoo.beta.myapplication.WeiboView.EmojiTextView;
 import com.ninghoo.beta.myapplication.WeiboModel.Status;
 import com.nostra13.universalimageloader.core.ImageLoader;
 

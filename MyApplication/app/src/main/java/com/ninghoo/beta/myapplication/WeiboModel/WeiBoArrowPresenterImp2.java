@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.ninghoo.beta.myapplication.Adapter.WeiboAdapter;
 import com.ninghoo.beta.myapplication.Interface.WeiBoArrowPresent2;
-import com.ninghoo.beta.myapplication.View.ArrowDialog;
+import com.ninghoo.beta.myapplication.WeiboView.ArrowDialog;
 
 /**
  * Created by ningfu on 17-4-3.

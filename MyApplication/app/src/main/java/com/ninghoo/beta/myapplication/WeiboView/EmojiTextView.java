@@ -1,4 +1,4 @@
-package com.ninghoo.beta.myapplication.View;
+package com.ninghoo.beta.myapplication.WeiboView;
 
 /**
  * Created by ningfu on 17-4-2.
