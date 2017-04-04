@@ -3,7 +3,6 @@ package com.ninghoo.beta.myapplication.WeiboModel;
 import android.content.Context;
 
 import com.ninghoo.beta.myapplication.Adapter.WeiboAdapter;
-import com.ninghoo.beta.myapplication.Interface.Constants;
 import com.ninghoo.beta.myapplication.Interface.WeiBoArrowPresent2;
 import com.ninghoo.beta.myapplication.View.ArrowDialog;
 

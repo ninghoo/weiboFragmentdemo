@@ -1,5 +1,9 @@
 package com.ninghoo.beta.myapplication.Adapter;
 
+/**
+ * Created by ningfu on 17-4-4.
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -283,4 +287,5 @@ public abstract class WeiboAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
 
 }
+
 

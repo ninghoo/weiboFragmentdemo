@@ -17,7 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ninghoo.beta.myapplication.Adapter.WeiboAdapter;
-import com.ninghoo.beta.myapplication.Fragment.HomeFragmentView;
 import com.ninghoo.beta.myapplication.Interface.Constants;
 import com.ninghoo.beta.myapplication.Interface.HomeFragmentPresent;
 import com.ninghoo.beta.myapplication.View.ArrowDialog;
