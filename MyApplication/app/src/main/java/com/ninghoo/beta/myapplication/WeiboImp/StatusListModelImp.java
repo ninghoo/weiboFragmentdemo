@@ -171,7 +171,7 @@ public class StatusListModelImp implements StatusListModel {
             response = SDCardUtil.get(context, SDCardUtil.getSDCardPath() + "/weiSwift/home", groupType + AccessTokenKeeper.readAccessToken(context).getUid() + ".txt");
         }
         if (response != null) {
-            mStatusList = (ArrayList<Status>) StatusList.parse(response).statuses;
+//            mStatusList = (ArrayList<Status>) StatusList.parse(response).statuses;
             onDataFinishedListener.onDataFinish(mStatusList);
             return true;
         } else {

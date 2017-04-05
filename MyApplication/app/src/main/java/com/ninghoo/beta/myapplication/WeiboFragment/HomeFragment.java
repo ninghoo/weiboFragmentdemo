@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
 
     private GroupPopWindow mPopWindow;
 
-    private boolean mComeFromAccoutActivity;
+//    private boolean mComeFromAccoutActivity;
     private String mUserName;
 
 
@@ -110,7 +110,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
         mContext = getContext();
 
         mHomePresent = new HomeFragmentPresentImp(this);
-        mComeFromAccoutActivity = getArguments().getBoolean("comeFromAccoutActivity");
+//        mComeFromAccoutActivity = getArguments().getBoolean("comeFromAccoutActivity");
 
         mView = inflater.inflate(R.layout.mainfragment_layout, container, false);
 
@@ -128,18 +128,18 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
 
         initRecyclerView();
         initRefreshLayout();
-        initGroupWindows();
+//        initGroupWindows();
 
         // ？？？
         mSwipeRefreshLayout.post(new Runnable() {
             @Override
             public void run() {
-                mHomePresent.refreshUserName(mContext);
-                if (mComeFromAccoutActivity) {
-                    mHomePresent.firstLoadData(mContext, true);
-                } else {
+//                mHomePresent.refreshUserName(mContext);
+//                if (mComeFromAccoutActivity) {
+//                    mHomePresent.firstLoadData(mContext, true);
+//                } else {
                     mHomePresent.firstLoadData(mContext, mActivity.getIntent().getBooleanExtra("fisrtstart", false));
-                }
+//                }
             }
         });
         return mView;
@@ -179,7 +179,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
         mAdapter = new WeiboAdapter(mDatas, mContext) {
             @Override
             public void arrowClick(Status status, int position) {
-//                TimelineArrowWindow popupWindow = new TimelineArrowWindow(mContext, mDatas.get(position), mAdapter, position, mUserNameTextView.getText().toString());
+                TimelineArrowWindow popupWindow = new TimelineArrowWindow(mContext, mDatas.get(position), mAdapter, position, mUserNameTextView.getText().toString());
 //                popupWindow.showAtLocation(mRecyclerView, Gravity.CENTER, 0, 0);
 
                 ArrowDialog arrowDialog = new TimelineArrowWindow
@@ -298,9 +298,9 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
 
     @Override
     public void popWindowsDestory() {
-//        if (mPopWindow != null) {
-//            mPopWindow.onDestory();
-//        }
+        if (mPopWindow != null) {
+            mPopWindow.onDestory();
+        }
     }
 
 

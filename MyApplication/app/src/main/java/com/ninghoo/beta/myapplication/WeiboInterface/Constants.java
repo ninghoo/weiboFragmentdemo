@@ -19,8 +19,8 @@ public interface Constants {
     public static final String REDIRECT_URL = "http://oauth.weico.cc";
     public static final String SCOPE = "email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write";
 
-    // AppSecret就是MD5编码，生成MD5编码的前提条件是，本机已含该安装的应用。
-    public static final String AppSecret = "1e6e33db08f9192306c4afa0a61ad56c";
+
+    public static final String AppSecret = "3508769f2d8aed0519834c62ed8ce0d6";
     public static final String PackageName = "com.eico.weico";
 
 

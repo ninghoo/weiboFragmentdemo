@@ -112,17 +112,17 @@ public class MainActivity extends AppCompatActivity {
         mButtonBar = (LinearLayout) findViewById(R.id.buttonBarId);
         //mSnackBarContainer = (CoordinatorLayout) findViewById(R.id.coordinatorLayoutId);
 
-        //LogReport.getInstance().upload(mContext);
+//        LogReport.getInstance().upload(mContext);
         mBarManager = new BarManager(mContext);
         mFragmentManager = getSupportFragmentManager();
         mComeFromAccoutActivity = getIntent().getBooleanExtra("comeFromAccoutActivity", false);
 //
 //        //如果是从崩溃中恢复，还需要加载之前的缓存
-//        if (savedInstanceState != null) {
-//            restoreFragment(savedInstanceState);
-//        } else {
+        if (savedInstanceState != null) {
+            restoreFragment(savedInstanceState);
+        } else {
         setTabFragment(HOME_FRAGMENT);
-//        }
+        }
 
         // 设置底部状态栏点击监听切换Fragment。
         setUpListener();
