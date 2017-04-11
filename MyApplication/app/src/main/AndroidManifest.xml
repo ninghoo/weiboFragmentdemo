@@ -34,6 +34,9 @@
         <activity
             android:name=".Activity.WebViewActivity"/>
 
+        <activity
+            android:name=".Activity.AccoutActivity"/>
+
     </application>
 
 </manifest>

@@ -179,7 +179,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView,ArrowDial
         mAdapter = new WeiboAdapter(mDatas, mContext) {
             @Override
             public void arrowClick(Status status, int position) {
-                TimelineArrowWindow popupWindow = new TimelineArrowWindow(mContext, mDatas.get(position), mAdapter, position, mUserNameTextView.getText().toString());
+//                TimelineArrowWindow popupWindow = new TimelineArrowWindow(mContext, mDatas.get(position), mAdapter, position, mUserNameTextView.getText().toString());
 //                popupWindow.showAtLocation(mRecyclerView, Gravity.CENTER, 0, 0);
 
                 ArrowDialog arrowDialog = new TimelineArrowWindow

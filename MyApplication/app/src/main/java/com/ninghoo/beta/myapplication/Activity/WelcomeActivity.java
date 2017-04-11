@@ -24,11 +24,11 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_layout);
 
-//        if (AccessTokenKeeper.readAccessToken(this).isSessionValid()) {
-//            mStartIntent = new Intent(WelcomeActivity.this, MainActivity.class);
-//        } else {
+        if (AccessTokenKeeper.readAccessToken(this).isSessionValid()) {
+            mStartIntent = new Intent(WelcomeActivity.this, MainActivity.class);
+        } else {
             mStartIntent = new Intent(WelcomeActivity.this, UnLoginActivity.class);
-//        }
+        }
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
