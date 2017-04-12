@@ -8,9 +8,17 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ninghoo.beta.myapplication2.Activity.PhotoViewActivity;
+import com.ninghoo.beta.myapplication2.Activity.RepostActivity;
 import com.ninghoo.beta.myapplication2.R;
+import com.ninghoo.beta.myapplication2.Utils.RichTextUtils;
+import com.ninghoo.beta.myapplication2.Utils.TimeFormatUtils;
+import com.ninghoo.beta.myapplication2.WeiboModel.CircleTransform;
 import com.ninghoo.beta.myapplication2.WeiboModel.ParameterKeySet;
 import com.ninghoo.beta.myapplication2.WeiboModel.PicUrlsEntity;
 import com.ninghoo.beta.myapplication2.WeiboModel.StatusEntity;

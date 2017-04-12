@@ -58,7 +58,7 @@ public class HomePresenterImp implements HomePresenter {
     private void loadData(final boolean loadMore) {
         new BaseNetWork(mHomeView.getActivity(), url) {
             public WeiboParameters onPrepare() {
-                mParameters.put(ParameterKeySet.AUTH_ACCESS_TOKEN, mSPUtils.getToken().getToken());
+                mParameters.put(ParameterKeySet.AUTH_ACCESS_TOKEN, mSPUtils.getToken());
                 mParameters.put(ParameterKeySet.PAGE, page);
                 mParameters.put(ParameterKeySet.COUNT, 3);
                 return mParameters;

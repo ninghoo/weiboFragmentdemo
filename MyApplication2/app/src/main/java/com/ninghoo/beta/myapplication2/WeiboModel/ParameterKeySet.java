@@ -12,5 +12,5 @@ public class ParameterKeySet extends WBConstants {
     public static final String ID ="id";
     public static final String STATUS ="status";
     public static final String COMMENT ="comment";
-    public static final String AUTH_ACCESS_TOKEN ="auth_access_token";
+    public static final String AUTH_ACCESS_TOKEN = "access_token";
 }

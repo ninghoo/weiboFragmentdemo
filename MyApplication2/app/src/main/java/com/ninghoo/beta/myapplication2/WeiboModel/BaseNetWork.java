@@ -84,3 +84,4 @@ public abstract class BaseNetWork {
 
     public abstract void onFinish(HttpResponse response, boolean success);
 }
+

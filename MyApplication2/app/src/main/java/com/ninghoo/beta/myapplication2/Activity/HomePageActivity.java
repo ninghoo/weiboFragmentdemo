@@ -1,9 +1,7 @@
 package com.ninghoo.beta.myapplication2.Activity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.ninghoo.beta.myapplication2.Fragment.HomeFragment;
 import com.ninghoo.beta.myapplication2.Fragment.MessageFragment;
@@ -38,6 +37,7 @@ public class HomePageActivity extends CommonActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.ac_home_page);
 //        getToolbar().setDisplayHomeAsUpEnabled(false).setTitle(R.string.app_name);
         fragment = new Class[]{HomeFragment.class, MessageFragment.class, ProfileFragment.class};
         initialize();
@@ -56,8 +56,12 @@ public class HomePageActivity extends CommonActivity
         rbMessage = (RadioButton) findViewById(R.id.rbMessage);
         rbProfile = (RadioButton) findViewById(R.id.rbProfile);
         rgTab = (RadioGroup) findViewById(R.id.rgTab);
+//        Toast.makeText(HomePageActivity.this, ":" + getSupportFragmentManager(), Toast.LENGTH_LONG).show();
+
         tabHost.setup(getApplicationContext(), getSupportFragmentManager(), R.id.flContainer);
-        for (int i = 0; i < fragment.length; i++) {
+
+        for (int i = 0; i < fragment.length; i++)
+        {
             TabHost.TabSpec tabSpec = tabHost.newTabSpec(String.valueOf(i)).setIndicator(String.valueOf(i));
             tabHost.addTab(tabSpec, fragment[i], null);
         }

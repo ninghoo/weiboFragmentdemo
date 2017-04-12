@@ -27,7 +27,7 @@ public abstract class CommonActivity extends AppCompatActivity
         super.onCreate(savedInstanceState, persistentState);
 
         setContentView(R.layout.ac_baselayout);
-//        initialize();
+        initialize();
         View v= getLayoutInflater().inflate(getLayoutId(), rlContent, false);
         rlContent.addView(v);
         mToolbarX = new ToolbarX(toolbar,this);
@@ -56,19 +56,19 @@ public abstract class CommonActivity extends AppCompatActivity
         overridePendingTransition(R.anim.anmi_in_right_left, R.anim.anmi_out_right_left);
     }
 
-//    private void initialize()
-//    {
-//
-//        rlContent = (RelativeLayout) findViewById(R.id.rlContent);
-//        toolbar = (Toolbar) findViewById(R.id.toolbar);
-//
-//
-//    }
-//    public  ToolbarX getToolbar()
-//    {
-//        if(null==mToolbarX){
-//            mToolbarX = new ToolbarX(toolbar,this);
-//        }
-//        return mToolbarX;
-//    }
+    private void initialize()
+    {
+
+        rlContent = (RelativeLayout) findViewById(R.id.rlContent);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+    }
+    public  ToolbarX getToolbar()
+    {
+        if(null==mToolbarX){
+            mToolbarX = new ToolbarX(toolbar,this);
+        }
+        return mToolbarX;
+    }
 }

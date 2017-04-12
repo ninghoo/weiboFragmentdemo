@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface HomeView extends BaseView
 {
-    Void onSuccess(List<StatusEntity> list);
+    void onSuccess(List<StatusEntity> list);
 }

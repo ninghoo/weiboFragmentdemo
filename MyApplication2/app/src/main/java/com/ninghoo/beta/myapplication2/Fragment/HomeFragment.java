@@ -11,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.ninghoo.beta.myapplication2.Activity.ArticleCommentActivity;
+import com.ninghoo.beta.myapplication2.Adapter.HomepageListAdapter;
 import com.ninghoo.beta.myapplication2.Interface.HomePresenter;
 import com.ninghoo.beta.myapplication2.Interface.HomePresenterImp;
 import com.ninghoo.beta.myapplication2.Interface.HomeView;
 import com.ninghoo.beta.myapplication2.R;
+import com.ninghoo.beta.myapplication2.Utils.DividerItemDecoration;
 import com.ninghoo.beta.myapplication2.WeiboModel.PullToRefreshRecyclerView;
 import com.ninghoo.beta.myapplication2.WeiboModel.StatusEntity;
 
@@ -110,6 +113,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
 
     public void onError(String error) {
         rlv.onRefreshComplete();
-        Toast.makeText(getActivity(),error,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(),error,Toast.LENGTH_LONG).show();
     }
 }

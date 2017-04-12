@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/ningfu/文档/Weibo开源/cniao5-weibo-master/pullToRefresh/src/main/assets"/><source path="/home/ningfu/文档/Weibo开源/cniao5-weibo-master/pullToRefresh/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/home/ningfu/文档/Weibo开源/cniao5-weibo-master/pullToRefresh/src/debug/assets"/></dataSet></merger>
